@@ -11,4 +11,21 @@ class Baby < ApplicationRecord
     def food_count
         breastfeedings.count(:id)
     end
-end
+
+    def feeding_times_today
+        feed_today.count
+    end
+
+    def volumen_today
+        feed_today.sum(:volumen)
+    end
+
+    def last_time
+        breastfeedings.last.created_at
+    end
+
+    private
+      def feed_today
+        breastfeedings.where('created_at > ?', Date.today)
+      end
+    end

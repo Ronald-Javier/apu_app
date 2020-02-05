@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @baby.name %>
+  <strong>Nombre:</strong>
+  <%= @baby.name %><br>
+  <strong>Veces hoy:</strong>
+  <%= @baby.feeding_times_today %><br>
+  <strong>Tiempo Ultima vez:</strong>
+  <%= @baby.last_time %><br>
+  <strong>Volumen hoy:</strong>
+  <%= @baby.volumen_today %><br>
 </p>
 
 <%= link_to 'Edit', edit_baby_path(@baby) %> |
