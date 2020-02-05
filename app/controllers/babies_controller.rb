@@ -4,12 +4,13 @@ class BabiesController < ApplicationController
   # GET /babies
   # GET /babies.json
   def index
-    @babies = Baby.all
+    @babies = Baby.all.includes(:breastfeedings)
   end
 
   # GET /babies/1
   # GET /babies/1.json
   def show
+    @baby = Baby.find(params[:id])
   end
 
   # GET /babies/new
@@ -59,6 +60,10 @@ class BabiesController < ApplicationController
       format.html { redirect_to babies_url, notice: 'Baby was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def volumen
+   
   end
 
   private

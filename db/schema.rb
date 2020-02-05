@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_02_05_153949) do
 
   create_table "breastfeedings", force: :cascade do |t|
     t.integer "baby_id"
-    t.string "volumen"
-    t.string "time_eat"
+    t.integer "volumen"
+    t.integer "time_eat"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["baby_id"], name: "index_breastfeedings_on_baby_id"

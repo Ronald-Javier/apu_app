@@ -4,21 +4,24 @@ class BreastfeedingsController < ApplicationController
   # GET /breastfeedings
   # GET /breastfeedings.json
   def index
-    @breastfeedings = Breastfeeding.all
+    @breastfeedings = Breastfeeding.all.includes(:baby)
   end
 
   # GET /breastfeedings/1
   # GET /breastfeedings/1.json
   def show
+    @breastfeeding = Breastfeeding.find(params[:id])
   end
 
   # GET /breastfeedings/new
   def new
     @breastfeeding = Breastfeeding.new
+    @babies = Baby.pluck(:name, :id)
   end
 
   # GET /breastfeedings/1/edit
   def edit
+    @babies = Baby.pluck(:name, :id)
   end
 
   # POST /breastfeedings

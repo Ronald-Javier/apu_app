@@ -15,7 +15,7 @@
   <tbody>
     <% @breastfeedings.each do |breastfeeding| %>
       <tr>
-        <td><%= breastfeeding.baby %></td>
+        <td><%= breastfeeding.baby.name %></td>
         <td><%= breastfeeding.volumen %></td>
         <td><%= breastfeeding.time_eat %></td>
         <td><%= link_to 'Show', breastfeeding %></td>

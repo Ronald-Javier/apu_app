@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :baby_id %>
-    <%= form.text_field :baby_id %>
+    <%= form.select :baby_id, options_for_select(@babies) %>
   </div>
 
   <div class="field">
