@@ -5,6 +5,7 @@ class BabiesController < ApplicationController
   # GET /babies.json
   def index
     @babies = Baby.all.includes(:breastfeedings)
+    @food_count = Breastfeeding.all.group(:baby_id).count
   end
 
   # GET /babies/1

@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Volumen</th>
       <th>Tiempo</th>
+      <th>Veces alimentado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,14 +19,16 @@
         <td><%= baby.name %></td>
         <td><%= baby.total_volumen %></td>
         <td><%= baby.total_time %></td>
+        <td><%= baby.food_count %></td>
+        <td><%= link_to 'Show', baby %></td>
+        <td><%= link_to 'Edit', edit_baby_path(baby) %></td>
+        <td><%= link_to 'Destroy', baby, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-
+    <% end %>
   </tbody>
 </table>
+
 <br>
-<%= link_to 'Show', baby %></td>
-<%= link_to 'Edit', edit_baby_path(baby) %>
-<%= link_to 'Destroy', baby, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-<br>
-<%= link_to 'New Baby', new_baby_path %>
+
+<%= link_to 'New Baby', new_baby_path %> <br>
+<%= link_to 'Alimentar Bebe', breastfeedings_path %>
