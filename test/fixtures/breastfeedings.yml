@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  baby: one
+  volumen: MyString
+  time_eat: MyString
+
+two:
+  baby: two
+  volumen: MyString
+  time_eat: MyString
